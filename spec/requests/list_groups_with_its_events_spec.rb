@@ -16,6 +16,7 @@ describe 'GET /groups/:id' do
   end
 
   it 'returns 200' do 
+    binding.pry 
     expect(response).to have_http_status(200)
   end
 

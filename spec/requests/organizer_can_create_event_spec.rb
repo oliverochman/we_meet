@@ -38,6 +38,8 @@ describe 'POST /events' do
     it 'assigns event to the right group' do
       expect(@last_event.group).to eq group
     end
+
+    ## event should list organizer name
   end
 
   describe 'POST req with no event title' do
