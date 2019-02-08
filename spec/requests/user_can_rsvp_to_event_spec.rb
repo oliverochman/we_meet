@@ -13,6 +13,9 @@ describe 'POST /events/:id/attendees' do
     end
 
     it 'adds user to list of attendees for event' do
+      
+      binding.pry
+      
       attendees = event.attendees.map(&:user)
       expect(attendees).to include user
     end
@@ -20,11 +23,9 @@ describe 'POST /events/:id/attendees' do
     it 'responds with success message' do
       expect(response_json['message']).to eq 'Your RSVP was successfylly processed'
     end
-
     it 'responds with status 200' do
       expect(response).to have_http_status 200
     end
-
   end
 
   describe 'POST req with invalid credentials (no user is logged in on the client)' do 
